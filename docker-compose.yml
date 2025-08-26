@@ -1,27 +1,17 @@
 
 services:
   backend:
-    build: ./server
-    container_name: expense-backend
+    image: aamirali1/mern-backend:latest
     ports:
       - "5000:5000"
     env_file:
       - ./server/.env
-    networks:
-      - mern-network
 
   frontend:
-    build: ./client
-    container_name: expense-frontend
+    image: aamirali1/mern-frontend:latest
     ports:
       - "5173:5173"
     environment:
       - VITE_API_URL=http://backend:5000
     depends_on:
       - backend
-    networks:
-      - mern-network
-
-networks:
-  mern-network:
-    driver: bridge
