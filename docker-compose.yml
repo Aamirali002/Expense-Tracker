@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./server
+    container_name: mern-backend
+    networks:
+      - mern-network
+    ports:
+      - 5000:5000
+    env_file:
+      - ./server/.env
+    
+  frontend:
+    build: ./client
+    container_name: mern-frontend
+    ports:
+      - 5173:5173
+    depends_on:
+      - backend
+    networks:
+      - mern-network
+    environment:
+      - VITE_API_URL=http://backend:5000
+
+networks:
+  mern-network:

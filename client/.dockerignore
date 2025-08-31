@@ -1,0 +1,23 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Env files
+.env
+.env.local
+
+# Git files
+.git
+.gitignore
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Docker itself
+docker-compose.yml
+Dockerfile
+
+# Logs
+*.log
