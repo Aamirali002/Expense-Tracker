@@ -14,11 +14,9 @@ A **full-stack MERN (MongoDB, Express, React, Node.js) application** to track yo
   - [Prerequisites](#prerequisites)  
   - [Installation](#installation)  
   - [Running Locally](#running-locally)  
-- [Docker Setup](#docker-setup)  
-- [Folder Structure](#folder-structure)  
+- [Docker Setup](#docker-setup)   
 - [API Endpoints](#api-endpoints)  
 - [Contributing](#contributing)  
-- [License](#license)  
 
 ---
 
@@ -48,7 +46,6 @@ A **full-stack MERN (MongoDB, Express, React, Node.js) application** to track yo
 ![Dashboard](./screenshots/dashboard.png)  
 ![Add Income](./screenshots/add-income.png)
 ![Add Expense](./screenshots/add-expense.png)  
-*Replace with your actual screenshots from the `screenshots` folder.*
 
 ---
 
@@ -123,28 +120,6 @@ docker-compose up --build
 
 ---
 
-## Folder Structure
-
-```
-Expense-Tracker/
-│
-├─ client/            # React frontend
-│  ├─ src/
-│  └─ package.json
-│
-├─ server/            # Node.js backend
-│  ├─ routes/
-│  ├─ models/
-│  ├─ controllers/
-│  └─ server.js
-│
-├─ .gitignore
-├─ docker-compose.yml
-├─ README.md
-└─ package.json
-```
-
----
 
 ## API Endpoints (Backend)
 
@@ -168,7 +143,3 @@ Expense-Tracker/
 5. Open a Pull Request  
 
 ---
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
