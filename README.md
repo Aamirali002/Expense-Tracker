@@ -44,7 +44,9 @@ A **full-stack MERN (MongoDB, Express, React, Node.js) application** to track yo
 
 ## Screenshots
 
+![Login Page](./screenshots/login.png) 
 ![Dashboard](./screenshots/dashboard.png)  
+![Add Income](./screenshots/add-income.png)
 ![Add Expense](./screenshots/add-expense.png)  
 *Replace with your actual screenshots from the `screenshots` folder.*
 
