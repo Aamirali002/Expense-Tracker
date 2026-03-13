@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: expensetracker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-deployment
+  template:
+    metadata:
+      labels:
+        app: backend-deployment
+    spec:
+      containers:
+      - name: backend-deployment
+        image: aamirali1/mern-backend:04
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - mountPath: /data/db
+          name: mongo-storage
+        env:
+        - name: PORT
+          value: "5000"
+        - name: MONGO_URL
+          valueFrom:
+            secretKeyRef:
+              name: backend-secret
+              key: MONGO_URL
+        - name: JWT_SK
+          valueFrom:
+            secretKeyRef:
+              name: backend-secret
+              key: JWT_SK
+        - name: EMAIL_USER
+          value: primeaamir@gmail.com
+        - name: EMAIL_PASS
+          valueFrom:
+           secretKeyRef:
+              name: backend-secret
+              key: EMAIL_PASS
+        - name: CLIENT_URL
+          value: http://localhost:5173
+      volumes:
+      - name: mongo-storage
+        persistentVolumeClaim:
+          claimName: mongo-pvc
+      
